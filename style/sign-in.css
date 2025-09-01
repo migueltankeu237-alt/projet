@@ -1,0 +1,294 @@
+/* Importation de polices Google Fonts pour un look moderne */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #3b82f6; /* Bleu primaire */
+    --secondary-color: #1a56db; /* Bleu plus foncé */
+    --accent-color: #60a5fa; /* Bleu clair */
+    --text-color: #333;
+    --light-text-color: #555;
+    --background-color: #f0f2f5; /* Gris clair */
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --error-color: #ef4444; /* Rouge pour les erreurs */
+    --success-color: #22c55e; /* Vert pour le succès */
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Pour gérer l'animation de fond */
+    position: relative;
+}
+
+/* Animation de fond (optionnel, pour un look plus vivant) */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color), var(--secondary-color));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: -1;
+    opacity: 0.2; /* Moins intense */
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Conteneur principal du formulaire */
+.auth-container {
+    background-color: var(--card-background);
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    width: 100%;
+    max-width: 450px; /* Taille fixe pour desktop */
+    text-align: center;
+    z-index: 1; /* Assure que le formulaire est au-dessus de l'animation */
+}
+
+.form-header {
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-header p {
+    color: var(--light-text-color);
+    font-size: 1rem;
+}
+
+/* Groupes d'inputs */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+    font-weight: 500;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 1rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 3rem; /* Espace pour l'icône */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-with-icon input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+
+/* Style pour les messages d'erreur et de succès */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block; /* Pour qu'il prenne sa propre ligne */
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.error-message.show {
+    opacity: 1;
+    height: auto; /* Permet d'afficher le message */
+    margin-top: 0.5rem;
+}
+
+.status-message {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+
+.status-message.show {
+    opacity: 1;
+    height: auto;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.status-message.success {
+    background-color: rgba(34, 197, 94, 0.1); /* Vert très clair */
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.status-message.error {
+    background-color: rgba(239, 68, 68, 0.1); /* Rouge très clair */
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+/* Checkbox et liens */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.6rem;
+    accent-color: var(--primary-color); /* Couleur de la checkbox */
+    transform: scale(1.1);
+}
+
+.checkbox-group a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton de soumission */
+.submit-button {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* Pied de formulaire */
+.form-footer {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+}
+
+.form-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ----------------------------------------------------------------- */
+/* ---- RESPONSIVE DESIGN ---- */
+@media (max-width: 576px) {
+    .auth-container {
+        width: 95%;
+        margin: 1rem;
+        padding: 1.5rem 1.5rem;
+        box-shadow: 0 5px 20px var(--shadow-medium);
+    }
+
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-header p {
+        font-size: 0.9rem;
+    }
+
+    .input-with-icon input {
+        padding: 0.7rem 1rem 0.7rem 2.5rem;
+        font-size: 0.9rem;
+    }
+
+    .input-with-icon i {
+        left: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .input-group label, .checkbox-group label {
+        font-size: 0.85rem;
+    }
+
+    .submit-button {
+        font-size: 1rem;
+        padding: 0.9rem 0;
+    }
+
+    .form-footer {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-height: 700px) {
+    body {
+        align-items: flex-start; /* Alignement en haut pour les petits écrans en hauteur */
+        padding: 20px 0;
+    }
+    .auth-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
