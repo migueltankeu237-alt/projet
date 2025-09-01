@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos produits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <p>LOGO</p>
+            <div class="entete">
+                <a href="index.html">Accueil</a>
+                <a href="products.html">Nos produits</a>
+                <a href="cart.html">Panier (<span id="cart-count">0</span>)</a>
+                <a href="login.html">login</a>
+                <a href="sign-in.html">s'inscrire</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nos produits</h1>
+        <section class="product-list">
+            <div class="product-card" data-id="1" data-price="10000">
+                <img src="images/product1.jpg" alt="Café local">
+                <h3>Café local</h3>
+                <p>Prix : 10.000 F CFA</p>
+                <button class="add-to-cart">Ajouter au panier</button>
+            </div>
+            
+            <div class="product-card" data-id="2" data-price="15000">
+                <img src="images/product2.jpg" alt="Miel artisanal">
+                <h3>Miel artisanal</h3>
+                <p>Prix : 15.000 F CFA</p>
+                <button class="add-to-cart">Ajouter au panier</button>
+            </div>
+
+            <div class="product-card" data-id="3" data-price="5000">
+                <img src="images/product3.jpg" alt="Épices bio">
+                <h3>Épices bio</h3>
+                <p>Prix : 5.000 F CFA</p>
+                <button class="add-to-cart">Ajouter au panier</button>
+            </div>
+        </section>
+    </main>
+    <script src="script/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="cart.html" class="panier"><i class="fa-solid fa-shopping-cart"></i> (<span id="cart-count">0</span>)</a>
+            <p>LOGO</p>
+            <div class="entete">
+                <a href="index.html">Accueil</a>
+                <a href="products.html">Nos produits</a>
+                <a href="login.html">login</a>
+                <a href="sign-in.html">s'inscrire</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Votre Panier</h1>
+        <section id="cart-items">
+            <p id="empty-cart-message">Votre panier est vide.</p>
+        </section>
+        
+        <div class="cart-summary">
+            <p>Total : <span id="cart-total">0</span> F CFA</p>
+            <button id="checkout-button">Commander</button>
+        </div>
+    </main>
+    <script src="script/cart.js"></script>
+</body>
+</html>

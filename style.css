@@ -46,6 +46,10 @@ nav .entete a.active {
 nav .entete a:hover {
     color: #0056b3;
 }
+.panier{
+    text-decoration: none;
+    
+}
 
 /* ---- Contenu principal (Main) ---- */
 main {
