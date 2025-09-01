@@ -3,22 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nom du Site - Accueil</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#">LOGO</a>
-            <div class="contenair">
-                <ul>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">contact</a></li>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">services</a></li>
-                </ul>
+        <nav> <a href="cart.html"><i class="fa-solid fa-shopping-cart"></i> (<span id="cart-count">0</span>)</a>
+            <p>LOGO</p>
+            <div class="entete">
+                <a href="products.html">Nos produits</a>  <a href="card.html">Panier</a>       <a href="login.html">login</a>
+                <a href="sign-in.html">s'inscrire</a>
             </div>
         </nav>
     </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Bienvenue dans notre boutique en ligne</h1>
+            <p>Découvrez nos produits locaux et artisanaux de Bangangte.</p>
+            <button onclick="window.location.href='products.html'">Voir les produits</button>
+        </section>
+
+        <section class="featured-products">
+            <h2>Nos produits phares</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="images/product1.jpg" alt="Nom du produit 1">
+                    <h3>Nom du produit 1</h3>
+                    <p>Prix : 10.000 F CFA</p>
+                    <button>Ajouter au panier</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product2.jpg" alt="Nom du produit 2">
+                    <h3>Nom du produit 2</h3>
+                    <p>Prix : 15.000 F CFA</p>
+                    <button>Ajouter au panier</button>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nom de votre boutique. Tous droits réservés.</p>
+        <p>Contactez-nous : contact@votreboutique.com</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
