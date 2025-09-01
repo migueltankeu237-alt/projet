@@ -1,71 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - Nouvelle Boutique</title>
-    <link rel="stylesheet" href="style/sign-in.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function inscrire(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const compte = { email, password };
+      localStorage.setItem("compte", JSON.stringify(compte));
+      localStorage.setItem("connecte", "true");
+
+      alert("Inscription réussie !");
+      window.location.href = "products.html";
+    }
+  </script>
 </head>
 <body>
-    <div class="background-animation"></div> <div class="auth-container">
-        <div class="form-header">
-            <h2>Créer un compte</h2>
-            <p>Rejoignez-nous pour découvrir nos produits locaux !</p>
-        </div>
-        <form id="signupForm">
-            <div class="input-group">
-                <label for="nom">Nom Complet</label>
-                <div class="input-with-icon">
-                    <i class="fas fa-user"></i>
-                    <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
-                </div>
-                <small class="error-message" id="error-nom"></small>
-            </div>
-
-            <div class="input-group">
-                <label for="email">Adresse Email</label>
-                <div class="input-with-icon">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" id="email" name="email" placeholder="email@exemple.com" required>
-                </div>
-                <small class="error-message" id="error-email"></small>
-            </div>
-
-            <div class="input-group">
-                <label for="password">Mot de passe</label>
-                <div class="input-with-icon">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" id="password" name="password" placeholder="Minimum 6 caractères" required>
-                </div>
-                <small class="error-message" id="error-password"></small>
-            </div>
-
-            <div class="input-group">
-                <label for="confirm-password">Confirmer le mot de passe</label>
-                <div class="input-with-icon">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirmer votre mot de passe" required>
-                </div>
-                <small class="error-message" id="error-confirm-password"></small>
-            </div>
-
-            <div class="checkbox-group">
-                <input type="checkbox" id="terms" required>
-                <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a></label>
-            </div>
-             <small class="error-message" id="error-terms"></small>
-
-            <button type="submit" class="submit-button">S'inscrire</button>
-            
-            <p class="form-footer">
-                Vous avez déjà un compte ? <a href="login.html">Connectez-vous ici</a>
-            </p>
-
-            <div class="status-message" id="global-status-message"></div>
-        </form>
-    </div>
-
-    <script src="script/sign-in.js"></script>
+  <h2>Créer un compte</h2>
+  <form onsubmit="inscrire(event)">
+    <label>Email :</label><br>
+    <input type="email" id="email" required><br><br>
+    <label>Mot de passe :</label><br>
+    <input type="password" id="password" required><br><br>
+    <button type="submit">S'inscrire</button>
+  </form>
 </body>
 </html>

@@ -1,50 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos produits</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Produits</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <p>LOGO</p>
-            <div class="entete">
-                <a href="index.html">Accueil</a>
-                <a href="products.html">Nos produits</a>
-                <a href="cart.html">Panier (<span id="cart-count">0</span>)</a>
-                <a href="login.html">login</a>
-                <a href="sign-in.html">s'inscrire</a>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <h1>Nos produits</h1>
-        <section class="product-list">
-            <div class="product-card" data-id="1" data-price="10000">
-                <img src="images/product1.jpg" alt="Café local">
-                <h3>Café local</h3>
-                <p>Prix : 10.000 F CFA</p>
-                <button class="add-to-cart">Ajouter au panier</button>
-            </div>
-            
-            <div class="product-card" data-id="2" data-price="15000">
-                <img src="images/product2.jpg" alt="Miel artisanal">
-                <h3>Miel artisanal</h3>
-                <p>Prix : 15.000 F CFA</p>
-                <button class="add-to-cart">Ajouter au panier</button>
-            </div>
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a> |
+      <a href="product.html">Produits</a> |
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+      <span id="compteur">0</span>
+    </nav>
+  </header>
+<main>
+  <div class="produit">
+    <h3>iPhone 13</h3>
+    <p>Prix : 900 €</p>
+    <button class="ajouter" data-produit="iPhone 13" data-prix="900">Ajouter au panier</button>
+  </div>
 
-            <div class="product-card" data-id="3" data-price="5000">
-                <img src="images/product3.jpg" alt="Épices bio">
-                <h3>Épices bio</h3>
-                <p>Prix : 5.000 F CFA</p>
-                <button class="add-to-cart">Ajouter au panier</button>
-            </div>
-        </section>
-    </main>
-    <script src="script/cart.js"></script>
+  <div class="produit">
+    <h3>iPhone 14</h3>
+    <p>Prix : 1100 €</p>
+    <button class="ajouter" data-produit="iPhone 14" data-prix="1100">Ajouter au panier</button>
+  </div>
+
+  <div class="produit">
+    <h3>iPhone 15 Pro</h3>
+    <p>Prix : 1400 €</p>
+    <button class="ajouter" data-produit="iPhone 15 Pro" data-prix="1400">Ajouter au panier</button>
+  </div>
+</main>
+
+
 </body>
 </html>

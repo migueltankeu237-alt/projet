@@ -1,176 +1,83 @@
-/* ---- Style Global ---- */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
 }
 
-/* ---- En-tête (Header) ---- */
 header {
-    background-color: #fff;
-    color: #333;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #2c3e50;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+header nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-nav p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #007bff; /* Couleur du logo */
+header nav a:hover {
+  text-decoration: underline;
 }
 
-nav .entete a {
-    text-decoration: none;
-    color: #333;
-    margin-left: 1.5rem;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-nav .entete a.active {
-    text-decoration: underline; /* Ajoute un soulignement */
-    color: #007bff;              /* Change la couleur pour le mettre en évidence */
-    font-weight: bold;           /* Met le texte en gras pour plus de visibilité */
+#compteur {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  position: relative;
+  top: -10px;
+  right: 10px;
 }
 
-nav .entete a:hover {
-    color: #0056b3;
-}
-.panier{
-    text-decoration: none;
-    
+button, .btn {
+  background: #3498db;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* ---- Contenu principal (Main) ---- */
+button:hover, .btn:hover {
+  background: #2980b9;
+}
+
 main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-/* ---- Sections de la page ---- */
-section {
-    background-color: #fff;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.produit {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-/* ---- Style des boutons ---- */
-button, .button {
-    background-color: #007bff;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+.produit h3 {
+  margin-top: 0;
 }
 
-button:hover, .button:hover {
-    background-color: #0056b3;
+#logoutBtn {
+  background: #e74c3c;
+  margin-left: 20px;
 }
 
-/* ---- Style des cartes de produits (Products Card) ---- */
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.product-card {
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.product-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.product-card h3 {
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-}
-
-.product-card p {
-    font-weight: bold;
-    color: #007bff;
-}
-
-/* ---- Pied de page (Footer) ---- */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-    /* Cache le logo et met le menu à gauche, par exemple */
-    nav p {
-        font-size: 1.2rem;
-    }
-
-    /* Diminue la taille de la police des liens */
-    nav .entete a {
-        font-size: 0.9rem;
-        margin-left: 1rem;
-    }
-
-    /* Adapte la mise en page des produits */
-    .product-list {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-    }
-}
-
-/* ----------------------------------------------------------------- */
-/* ---- MEDIA QUERIES POUR LES PETITS ÉCRANS (Mobiles) ---- */
-@media (max-width: 576px) {
-    /* Cache les liens de navigation pour les remplacer par un menu hamburger */
-    /* (Ce sera un projet plus complexe, pour l'instant on les met simplement sur une colonne) */
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    nav .entete {
-        margin-top: 1rem;
-    }
-
-    nav .entete a {
-        display: block; /* Chaque lien prend une nouvelle ligne */
-        margin: 0.5rem 0; /* Ajoute de l'espace vertical */
-    }
-
-    /* Adapte la mise en page des produits sur une seule colonne */
-    .product-list {
-        grid-template-columns: 1fr;
-    }
-
-    /* Centre et redimensionne le formulaire d'inscription */
-    .login {
-        width: 90%;
-        margin: 2rem auto;
-    }
+#logoutBtn:hover {
+  background: #c0392b;
 }
