@@ -2,40 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-    function seConnecter(event) {
-      event.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      const compte = JSON.parse(localStorage.getItem("compte"));
-
-      if (!compte) {
-        alert("Aucun compte trouvé. Veuillez vous inscrire.");
-        return;
-      }
-
-      if (compte.email === email && compte.password === password) {
-        localStorage.setItem("connecte", "true");
-        alert("Connexion réussie !");
-        window.location.href = "product.html";
-      } else {
-        alert("Email ou mot de passe incorrect.");
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="style/sign-in.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <h2>Connexion</h2>
-  <form onsubmit="seConnecter(event)">
-    <label>Email :</label><br>
-    <input type="email" id="email" required><br><br>
-    <label>Mot de passe :</label><br>
-    <input type="password" id="password" required><br><br>
-    <button type="submit">Se connecter</button>
-  </form>
-  <p>Pas encore de compte ? <a href="sign-in.html">Créer un compte</a></p>
+  <section class="auth-container">
+    <div class="form-header">
+      <h2>Connection </h2>
+      <p>connectez vous pour pouvoir commander</p>
+    </div>
+    <form>
+      <div class="input-box">
+        <i class="fas fa-envelope"></i>
+        <label>Email </label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="input-box">
+        <i class="fas fa-lock"></i>
+        <label>Mot de passe </label>
+        <input type="password" id="password" required>
+      </div>
+      <i class="fas fa-login"></i>
+      <div class="sign-in">
+        <p>vous n'avez pas de compte?</p>
+        <a href="sign-in.html">inscrivez-vous</a>
+      </div>
+      <button type="submit" class="submit-button" onclick="seConnecter()">Se Connecter</button>
+    </form>
+    <div class="error-message">
+
+    </div>
+  </section>
 </body>
 </html>
